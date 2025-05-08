@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Formats.Tar;
 
-namespace Repository
+namespace Repository.EF
 {
     public class Context : DbContext
     {
@@ -21,7 +21,7 @@ namespace Repository
             modelBuilder.Entity<Conferente>( 
                t =>
                {
-                   t.ToTable<Conferente>("Conferente");
+                   t.ToTable("Conferente");
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
@@ -36,7 +36,7 @@ namespace Repository
             modelBuilder.Entity<Entregador>(
                t =>
                {
-                   t.ToTable<Entregador>("Entregador");
+                   t.ToTable("Entregador");
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
@@ -51,7 +51,7 @@ namespace Repository
             modelBuilder.Entity<Produto>(
                 t =>
                 {
-                    t.ToTable<Produto>("Produto");
+                    t.ToTable("Produto");
                     t.HasKey(t => t.id);
                     t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                     t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
@@ -65,7 +65,7 @@ namespace Repository
             modelBuilder.Entity <Entrega>(
                 t =>
                 {
-                    t.ToTable<Entrega>("Entrega");
+                    t.ToTable("Entrega");
                     t.HasKey(t => t.id);
                     t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                     t.Property(t => t.endereco).HasColumnType("varchar(128)").IsRequired();
@@ -92,7 +92,7 @@ namespace Repository
             modelBuilder.Entity<ProdutoEntrega>(
                 t =>
                 {
-                    t.ToTable<ProdutoEntrega>("ProdutoEntrega");
+                    t.ToTable("ProdutoEntrega");
                     t.Property(t => t.quantidade).HasColumnType("int").IsRequired();
                     t.HasMany(t => t.produtos)
                         .WithOne(t => t.produtoentrega)

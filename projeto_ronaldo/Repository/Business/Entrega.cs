@@ -4,7 +4,7 @@ namespace Business
 {
     public class Entrega  
     {   
-    public int id { get; set; }
+    public required int id { get; set; }
     public string endereco { get; set; }
     public float valor { get; set; }
     public string descricao { get; set; }

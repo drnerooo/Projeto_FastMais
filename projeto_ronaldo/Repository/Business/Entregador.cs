@@ -8,7 +8,7 @@ namespace Business
 {
     public class Entregador
     {
-        public int id { get; set; }
+        public required int id { get; set; }
         public string nome { get; set; }
         public virtual List<Entrega> entregas { get; set; }
     }
