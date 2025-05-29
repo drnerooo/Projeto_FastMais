@@ -18,6 +18,10 @@ namespace Repository.Repositories
             this._context = context;
             this.dbSet = context.Set<TEntity>();
         }
+        public virtual void Insert(TEntity entity)
+        {
+            dbSet.Add(entity); 
+        }
 
         public virtual List<TEntity> GetAll()
         {
@@ -31,25 +35,28 @@ namespace Repository.Repositories
         public virtual void Add(TEntity entity)
         {
             dbSet.Add(entity);
-            dbSet.SaveChanges();
         }
 
         public virtual void Update(TEntity entity)
         {
             dbSet.Update(entity);
-            dbSet.SaveChanges();
         }
 
         public virtual void Delete(TEntity entity)
         {
             dbSet.Remove (entity);
-            dbSet.SaveChanges();
+            
         }
 
         public virtual void Delete(int id)
         {
             TEntity entity = dbSet.Find(id);
             dbSet.Remove(entity);
+        }
+
+        public virtual void Persist()
+        {
+            _context.SaveChanges();
         }
     }
 }

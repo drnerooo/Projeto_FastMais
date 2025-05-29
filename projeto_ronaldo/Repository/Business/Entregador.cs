@@ -10,6 +10,6 @@ namespace Business
     {
         public required int id { get; set; }
         public string nome { get; set; }
-        public virtual List<Entrega> entregas { get; set; }
+        public virtual List<Entrega> entrega_ent { get; set; }
     }
 }

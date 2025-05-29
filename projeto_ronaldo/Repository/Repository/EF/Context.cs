@@ -25,8 +25,7 @@ namespace Repository.EF
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
-                   t.Property(t => t.entregas).HasColumnType("int").IsRequired();
-                   t.HasMany(t => t.entregas)
+                   t.HasMany(t => t.entrega_conf)
                        .WithOne(t => t.conferente)
                        .HasForeignKey(t => t.id)
                        .OnDelete(DeleteBehavior.NoAction)
@@ -40,7 +39,7 @@ namespace Repository.EF
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
-                   t.HasMany(t => t.entregas)
+                   t.HasMany(t => t.entrega_ent)
                        .WithOne(t => t.entregador)
                        .HasForeignKey(t => t.id)
                        .OnDelete(DeleteBehavior.NoAction)
@@ -74,8 +73,8 @@ namespace Repository.EF
                     t.Property(t => t.inicio).HasColumnType("datetime").IsRequired();
                     t.Property(t => t.fim).HasColumnType("datetime").IsRequired();
                     t.HasOne(t => t.conferente)
-                        .WithMany(t => t.entregas)
-                        .HasForeignKey(t => t.id)
+                        .WithMany(t => t.entrega_conf)
+                        .HasForeignKey(t => t.conferenteID)
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                     t.HasOne(t => t.produtoentrega)
@@ -83,8 +82,8 @@ namespace Repository.EF
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                     t.HasOne(t => t.entregador)
-                        .WithMany(t => t.entregas)
-                        .HasForeignKey(t => t.id)
+                        .WithMany(t => t.entrega_ent)
+                        .HasForeignKey(t => t.entregadorID)
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 }
