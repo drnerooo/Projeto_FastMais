@@ -4,12 +4,12 @@ namespace Business
 {
     public class Entrega  
     {   
-    public required int id { get; set; }
+    public int id { get; set; }
     public string endereco { get; set; }
     public float valor { get; set; }
-    public string descricao { get; set; }
+    public string? descricao { get; set; }
     public DateTime inicio { get; set; }
-    public DateTime fim { get; set; }   
+    public DateTime? fim { get; set; }   
        
     public int conferenteID { get; set; }    
     public int entregadorID { get; set; }

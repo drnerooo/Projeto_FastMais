@@ -57,7 +57,7 @@ namespace Repository.EF
                     t.Property(t => t.valor).HasColumnType("float").IsRequired();
                     t.HasOne(t => t.produtoentrega)
                         .WithMany(t => t.produtos)
-                        .HasForeignKey(t => t.id)
+                        .HasForeignKey(t =>t.id)
                         .OnDelete(DeleteBehavior.NoAction) .IsRequired();
                 }
            );
@@ -69,9 +69,9 @@ namespace Repository.EF
                     t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                     t.Property(t => t.endereco).HasColumnType("varchar(128)").IsRequired();
                     t.Property(t => t.valor).HasColumnType("float").IsRequired();
-                    t.Property(t => t.descricao).HasColumnType("varchar(128)").IsRequired();
+                    t.Property(t => t.descricao).HasColumnType("varchar(128)");
                     t.Property(t => t.inicio).HasColumnType("datetime").IsRequired();
-                    t.Property(t => t.fim).HasColumnType("datetime").IsRequired();
+                    t.Property(t => t.fim).HasColumnType("datetime");
                     t.HasOne(t => t.conferente)
                         .WithMany(t => t.entrega_conf)
                         .HasForeignKey(t => t.conferenteID)
@@ -93,6 +93,8 @@ namespace Repository.EF
                 {
                     t.ToTable("ProdutoEntrega");
                     t.Property(t => t.quantidade).HasColumnType("int").IsRequired();
+                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
+                    t.HasKey(t => t.id);
                     t.HasMany(t => t.produtos)
                         .WithOne(t => t.produtoentrega)
                         .OnDelete(DeleteBehavior.NoAction)
