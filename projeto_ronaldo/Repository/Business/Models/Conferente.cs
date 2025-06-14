@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business
+namespace Business.Models
 {
-    public class Entregador
+    public class Conferente
     {
-        public required int id { get; set; }
+        public int id { get; set; }
         public string nome { get; set; }
-        public virtual List<Entrega> entrega_ent { get; set; }
+        public virtual List<Entrega> entrega_conf { get; set; }
     }
 }

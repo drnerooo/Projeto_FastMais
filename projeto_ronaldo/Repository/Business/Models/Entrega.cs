@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Business
+namespace Business.Models
 {
     public class Entrega  
     {   

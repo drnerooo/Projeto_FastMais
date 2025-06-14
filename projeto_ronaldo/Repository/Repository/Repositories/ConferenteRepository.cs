@@ -1,4 +1,4 @@
-﻿using Business;
+﻿using Business.Models;
 using Repository.EF;
 using System;
 using System.Collections.Generic;

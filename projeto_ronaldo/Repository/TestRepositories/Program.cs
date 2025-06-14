@@ -1,4 +1,5 @@
-﻿using Business;
+﻿using Business.Models;
+
 //using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
