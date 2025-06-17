@@ -35,7 +35,7 @@ var services = scope.ServiceProvider;
 try
 {
     var context = services.GetRequiredService<Context>();
-    DBInitializer.Initializer(context);
+    DBInitializer.Initialize(context);
 }
 catch (Exception ex)
 {

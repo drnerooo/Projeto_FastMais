@@ -25,8 +25,8 @@ namespace Repository.EF
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
-                   t.Property(t => t.login).HasColumnType("varchar(128)").IsRequired();
-                   t.Property(t => t.senha).HasColumnType("varchar(128)").IsRequired();
+                   t.Property(t => t.login).HasColumnType("varchar(64)").IsRequired();
+                   t.Property(t => t.senha).HasColumnType("varchar(64)").IsRequired();
                    t.HasMany(t => t.entrega_conf)
                        .WithOne(t => t.conferente)
                        .HasForeignKey(t => t.id)
@@ -41,8 +41,8 @@ namespace Repository.EF
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
-                   t.Property(t => t.login).HasColumnType("varchar(128)").IsRequired();
-                   t.Property(t => t.senha).HasColumnType("varchar(128)").IsRequired();
+                   t.Property(t => t.login).HasColumnType("varchar(64)").IsRequired();
+                   t.Property(t => t.senha).HasColumnType("varchar(64)").IsRequired();
                    t.HasMany(t => t.entrega_ent)
                        .WithOne(t => t.entregador)
                        .HasForeignKey(t => t.id)

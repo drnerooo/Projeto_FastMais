@@ -9,7 +9,7 @@ namespace Repository.EF
 {
     public class DBInitializer
     {
-        public static void Initializer(Context context) { 
+        public static void Initialize(Context context) { 
             if (context.Database.EnsureCreated())
             {
 
@@ -27,6 +27,7 @@ namespace Repository.EF
                     context.Produtos.Add(lamp20w);
                     Produto caboflex15 = new Produto("Rolo de Cabo 1.5 Flexível", 3.00f);
                     context.Produtos.Add(caboflex15);
+
                 context.SaveChanges();
 
 
