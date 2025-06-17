@@ -1,4 +1,4 @@
-body{
+.fundo{
     background-color : gainsboro;
     color : cornflowerblue;
 }
@@ -8,7 +8,7 @@ body{
     font-style: normal;
 }
 .titulo {
-    font-size: 72px;
+    font-size: 84px;
     color: cornflowerblue;
     text-align: center;
     text-decoration: underline;

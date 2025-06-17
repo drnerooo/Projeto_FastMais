@@ -4,15 +4,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Fast+</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css"/>
+	<link href="~/lib/bootstrap-5.3.5-dist/css/bootstrap.css" rel="stylesheet" />
+	<link href="~/css/style.css" rel="stylesheet"/>
+
 </head>
-<body class="fundo bebas-neue-regular">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
-		<a class="fundo navbar-brand" href="index.html">Home</a>
-	</nav>
+<body>
+	<div class="container">
+		<div id="head">
+			<div id ="logo" class="col-1 col-md-2 offset-md-0 offset-3">
+				<a asp-controller="Home" asp-action="Index">
+					<img src="~/imagens/casa.png" alt="Home" width="30%">
+				</a>
+			</div>
+		</div>
+	</div>
 	<div id="corpo" class="row formulario"
 		@RenderBody()
 	</div>
+	<script src="~lib/bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

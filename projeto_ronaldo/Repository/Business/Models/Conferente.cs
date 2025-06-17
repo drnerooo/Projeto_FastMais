@@ -8,8 +8,21 @@ namespace Business.Models
 {
     public class Conferente
     {
+        public Conferente()
+        {
+
+        }
+        public Conferente(string nome, string login, string senha)
+        {
+            this.nome = nome;
+            this.login = login;
+            this.senha = senha;
+        }
         public int id { get; set; }
         public string nome { get; set; }
+        public string login { get; set; }
+        public string senha { get; set; }
+        public virtual List<Entrega> entrega_ent { get; set; }
         public virtual List<Entrega> entrega_conf { get; set; }
     }
 }

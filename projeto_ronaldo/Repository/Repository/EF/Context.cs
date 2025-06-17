@@ -25,6 +25,8 @@ namespace Repository.EF
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
+                   t.Property(t => t.login).HasColumnType("varchar(128)").IsRequired();
+                   t.Property(t => t.senha).HasColumnType("varchar(128)").IsRequired();
                    t.HasMany(t => t.entrega_conf)
                        .WithOne(t => t.conferente)
                        .HasForeignKey(t => t.id)
@@ -39,6 +41,8 @@ namespace Repository.EF
                    t.HasKey(t => t.id);
                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                    t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
+                   t.Property(t => t.login).HasColumnType("varchar(128)").IsRequired();
+                   t.Property(t => t.senha).HasColumnType("varchar(128)").IsRequired();
                    t.HasMany(t => t.entrega_ent)
                        .WithOne(t => t.entregador)
                        .HasForeignKey(t => t.id)
@@ -74,7 +78,7 @@ namespace Repository.EF
                     t.Property(t => t.fim).HasColumnType("datetime");
                     t.HasOne(t => t.conferente)
                         .WithMany(t => t.entrega_conf)
-                        .HasForeignKey(t => t.conferenteID)
+                        .HasForeignKey(t => t.conferente)
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                     t.HasOne(t => t.produtoentrega)
@@ -83,7 +87,7 @@ namespace Repository.EF
                         .IsRequired();
                     t.HasOne(t => t.entregador)
                         .WithMany(t => t.entrega_ent)
-                        .HasForeignKey(t => t.entregadorID)
+                        .HasForeignKey(t => t.entregador)
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 }

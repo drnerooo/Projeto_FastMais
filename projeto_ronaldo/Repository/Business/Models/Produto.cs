@@ -8,7 +8,16 @@ namespace Business.Models
 {
     public class Produto
     {
-        public required int id { get; set; }
+        public Produto(string nome, float valor)
+        {
+            this.nome = nome;
+            this.valor = valor;
+        }
+        public Produto()
+        {
+
+        }
+        public int id { get; set; }
         public string nome { get; set; }
         public float valor { get; set; }
         public virtual ProdutoEntrega produtoentrega { get; set; }
