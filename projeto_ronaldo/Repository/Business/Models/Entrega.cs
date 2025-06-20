@@ -4,13 +4,13 @@ namespace Business.Models
 {
     public class Entrega  
     {
-        public Entrega(string endereco, float valor, string descricao) 
+        public Entrega(string endereco, float valor, DateTime inicio, int conferenteID, int entregadorID) 
         {
             this.endereco = endereco;
             this.valor = valor;
             this.descricao = descricao;
-            this.conferente = conferente;
-            this.entregador = entregador;
+            this.conferenteID = conferenteID;
+            this.entregadorID = entregadorID;
         }
         public Entrega(DateTime fim)
         {
@@ -21,8 +21,10 @@ namespace Business.Models
         public string endereco { get; set; }
         public float valor { get; set; }
         public string? descricao { get; set; }
-        public DateTime? inicio { get; }
-        public DateTime? fim { get; }         
+        public DateTime inicio { get; set; }
+        public DateTime? fim { get; set; }
+        public int conferenteID { get; set; }  
+        public int entregadorID { get; set; }
         public virtual Conferente conferente { get; set; }
         public virtual Entregador entregador { get; set; }
         public virtual ProdutoEntrega produtoentrega { get; set; }

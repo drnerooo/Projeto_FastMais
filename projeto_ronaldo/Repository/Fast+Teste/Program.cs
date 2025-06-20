@@ -26,14 +26,23 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+});
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+
+
 var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 try
-{
+    {
     var context = services.GetRequiredService<Context>();
     DBInitializer.Initialize(context);
 }

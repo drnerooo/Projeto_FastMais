@@ -1,25 +1,33 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Fast_Teste.Models;
+using Repository.EF;
+using Services;
+using Repository.Repositories;
+using Business.Models;
 
 namespace Fast_Teste.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private Context _context;
+    private ConferenteServices _conferenteServices;
+    private EntregadorServices _entregadorServices;
+    private EntregaServices _entregaServices;
+    private ProdutoEntregaServices _produtoEntregaServices;
+    private ProdutoServices _produtoServices;
+    public HomeController(Context context, ILogger<HomeController> logger)
     {
+        _context = context;
         _logger = logger;
+        _conferenteServices = new ConferenteServices(new ConferenteRepository(context));
     }
 
     public IActionResult Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
+        List<Conferente> conferentes = _conferenteServices.GetAll().OrderBy(x=>x.id).ToList();
+        ViewBag.Conferentes = conferentes;
         return View();
     }
 

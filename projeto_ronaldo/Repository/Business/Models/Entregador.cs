@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Business.Models
 {
     public class Entregador
-    {   
+    {
         public Entregador()
         {
 
@@ -25,8 +25,6 @@ namespace Business.Models
         public  int id { get; set; }
         public string nome { get; set; }
         public string login { get; set; }
-        public string senha { get; set; }
-        public virtual List<Entrega> entrega_conf { get; set; }
-        public virtual List<Entrega> entrega_ent { get; set; }
+        public string senha { get; set; }  
     }
 }

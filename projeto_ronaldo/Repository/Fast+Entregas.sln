@@ -9,12 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Busine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestRepositories", "TestRepositories\TestRepositories.csproj", "{A7ECFB27-FA05-46CE-B669-08362A40AE3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{091B9E80-71CA-4374-8708-16F2AEFDAA45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{091B9E80-71CA-4374-8708-16F2AEFDAA45}"
 	ProjectSection(ProjectDependencies) = postProject
 		{690B054A-19E0-457E-A4B0-4F0EE8949D98} = {690B054A-19E0-457E-A4B0-4F0EE8949D98}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fast+", "Fast+Teste\Fast+.csproj", "{416231F9-C84E-497B-86E0-1C66630F9EAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fast+", "Fast+Teste\Fast+.csproj", "{416231F9-C84E-497B-86E0-1C66630F9EAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

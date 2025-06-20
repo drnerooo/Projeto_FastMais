@@ -8,9 +8,16 @@ namespace Business.Models
 {
     public class Conferente
     {
+
+        //criar commit sem os construtores
         public Conferente()
         {
 
+        }
+
+        public Conferente(string nome)
+        {
+            this.nome = nome;
         }
         public Conferente(string nome, string login, string senha)
         {
@@ -22,7 +29,5 @@ namespace Business.Models
         public string nome { get; set; }
         public string login { get; set; }
         public string senha { get; set; }
-        public virtual List<Entrega> entrega_ent { get; set; }
-        public virtual List<Entrega> entrega_conf { get; set; }
     }
 }

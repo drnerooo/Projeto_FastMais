@@ -1,12 +1,15 @@
 ﻿using Repository.Repositories;
+using Services.Validation;
 namespace Services
 {
     public abstract class GenericServices<TEntity> where TEntity : class
     {
         private GenericRepository<TEntity> _repository;
+        private GenericValidationDictionary _validationDictionary;
         public GenericServices(GenericRepository<TEntity> repository)
         {
             _repository = repository;
+            _validationDictionary  = new ValidationDictionary();
         }
         public List<TEntity> GetAll()
         {
@@ -49,5 +52,14 @@ namespace Services
             }
             return resp;
         }
+        internal GenericRepository<TEntity> Repository 
+        { 
+            get { return _repository; } 
+        }
+
+        public GenericValidationDictionary ValidationDictionary
+        {
+            get { return _validationDictionary; }
+        }   
     }
 }

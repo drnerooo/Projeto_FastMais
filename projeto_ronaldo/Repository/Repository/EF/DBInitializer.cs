@@ -19,7 +19,7 @@ namespace Repository.EF
                 context.Entregadores.Add(
                     new Entregador("Entregador_Chefe", "admin", "admin"));
                 context.Entregas.Add(
-                    new Entrega("rua dos pinheiros azedos", 50, "2025-10-02" ));
+                    new Entrega("rua dos pinheiros azedos", 50, DateTime.Now, 1, 1));
 
                     Produto lamp15w = new Produto("Lampada 15 Watts", 10.00f);
                     context.Produtos.Add(lamp15w);
