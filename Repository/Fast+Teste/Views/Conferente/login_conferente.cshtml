@@ -1,0 +1,18 @@
+﻿@model Business.Models.Conferente
+@{
+    ViewData["Title"] = "Logar de Conferente";
+}
+
+<h2>Logar Conferente</h2>
+
+<form asp-action="Logar" method="post">
+     <div class="mb-3">
+        <label asp-for="login" class="form-label">Login</label>
+        <input asp-for="login" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="senha" class="form-label">Senha</label>
+        <input asp-for="senha" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
