@@ -49,5 +49,33 @@ namespace Fast_Teste.Areas.admin.Controllers
                 return RedirectToAction("Index", "Principal");
             }   
         }
+
+        // Cadastro de Conferente
+        [HttpGet]
+        public IActionResult CadastrarConferente()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarConferente(Conferente conferente)
+        {
+            _conferenteServices.Cadastrar(conferente);
+            return RedirectToAction("login_conferente");
+        }
+
+        // Cadastro de Entregador
+        [HttpGet]
+        public IActionResult CadastrarEntregador()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarEntregador(Entregador entregador)
+        {
+            _entregadorServices.Cadastrar(entregador);
+            return RedirectToAction("login_entregador");
+        }
     }
 }

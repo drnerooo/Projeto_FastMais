@@ -1,12 +1,16 @@
-﻿@model Business.Models.Conferente
+﻿@model Business.Models.Entregador
 @{
-    ViewData["Title"] = "Logar de Conferente";
+    ViewData["Title"] = "Cadastro de Entregador";
 }
 
-<h2>Logar Conferente</h2>
+<h2>Cadastrar Entregador</h2>
 
-<form asp-action="Logar" method="post">
-     <div class="mb-3">
+<form asp-action="CadastrarEntregador" method="post">
+    <div class="mb-3">
+        <label asp-for="nome" class="form-label">Nome</label>
+        <input asp-for="nome" class="form-control" />
+    </div>
+    <div class="mb-3">
         <label asp-for="login" class="form-label">Login</label>
         <input asp-for="login" class="form-control" />
     </div>

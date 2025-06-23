@@ -4,6 +4,9 @@ namespace Business.Models
 {
     public class Entrega  
     {
+        public Entrega()
+        {
+        }
         public Entrega(string endereco, float valor, DateTime inicio, int conferenteID, int entregadorID) 
         {
             this.endereco = endereco;

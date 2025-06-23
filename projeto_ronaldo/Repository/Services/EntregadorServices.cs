@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Repository.Repositories;
 using Business.Models;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Repository.EF;
+using Repository.Repositories;
 namespace Services
 {
     public class EntregadorServices : GenericServices<Entregador>
@@ -13,6 +16,7 @@ namespace Services
         {
 
         }
+        private readonly Context _context;
         public Entregador Logar(string login, string senha)
         {
             Entregador entregadorRetorno = null;
@@ -36,6 +40,11 @@ namespace Services
                 }
             }
             return entregadorRetorno;
+        }
+        public void Cadastrar(Entregador entregador)
+        {
+            _context.Entregadores.Add(entregador);
+            _context.SaveChanges();
         }
     }
 }

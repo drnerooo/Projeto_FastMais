@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Models;
+using Repository.EF;
 using Repository.Repositories;
 
 namespace Services
@@ -11,8 +12,10 @@ namespace Services
     public class ConferenteServices : GenericServices<Conferente>
     {
         public ConferenteServices(GenericRepository<Conferente> repository) : base(repository) { }
-        
-         public Conferente Logar(string login, string senha)
+        private readonly Context _context;
+
+
+        public Conferente Logar(string login, string senha)
          {
             Conferente conferenteRetorno = null;
             bool valid = true;
@@ -38,6 +41,12 @@ namespace Services
                 }
             }
             return conferenteRetorno;
-         }          
+        }
+
+        public void Cadastrar(Conferente conferente)
+        {
+            _context.Conferentes.Add(conferente);
+            _context.SaveChanges();
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Services;
-using System.Web.Mvc;
-
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace Fast_Teste.Util
 {
     public class Validation<TEntity> where TEntity : class

@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Referencia para EntityFramework SQL Server
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<Context>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<Context>(options => options.UseSqlServer(connectionString, b => b.MigrationsAssembly("Fast+")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
