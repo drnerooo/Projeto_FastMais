@@ -24,33 +24,19 @@ namespace Fast_Teste.Areas.admin.Controllers
         {
             return View();
         }
-        public IActionResult login_conferente(Conferente conferente)
+        public IActionResult Logar(Conferente conferente)
         {
             Conferente conferente1 = _conferenteServices.Logar(conferente.login, conferente.senha);
             if (conferente == null)
             {
-                Validation<Conferente>.CopyValidation(this.ModelState, _entregadorServices);
-                return View("login_entregador");
+                Validation<Conferente>.CopyValidation(this.ModelState, _conferenteServices);
+                return View("Index");
             }
             else
             {
-                return RedirectToAction("Index", "Principal");
+                return RedirectToAction("Index","Principal");
             }
         }
-        public IActionResult login_entregador(Entregador entregador)
-        {
-            Entregador entregador1 = _entregadorServices.Logar(entregador.login, entregador.senha);
-            if (entregador1 == null){
-                Validation<Entregador>.CopyValidation(this.ModelState, _entregadorServices);
-                return View("login_entregador");
-            }
-            else
-            {
-                return RedirectToAction("Index", "Principal");
-            }   
-        }
-
-        // Cadastro de Conferente
         [HttpGet]
         public IActionResult CadastrarConferente()
         {
@@ -60,22 +46,9 @@ namespace Fast_Teste.Areas.admin.Controllers
         [HttpPost]
         public IActionResult CadastrarConferente(Conferente conferente)
         {
-            _conferenteServices.Cadastrar(conferente);
+            _conferenteServices.CadastrarConferente(conferente);
             return RedirectToAction("login_conferente");
         }
 
-        // Cadastro de Entregador
-        [HttpGet]
-        public IActionResult CadastrarEntregador()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult CadastrarEntregador(Entregador entregador)
-        {
-            _entregadorServices.Cadastrar(entregador);
-            return RedirectToAction("login_entregador");
-        }
     }
 }

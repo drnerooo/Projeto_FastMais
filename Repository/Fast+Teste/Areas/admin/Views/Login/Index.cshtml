@@ -1,4 +1,4 @@
-﻿@model Business.Models.Conferente
+﻿    @model Business.Models.Conferente
 @{
     Layout = null; 
 }
@@ -15,7 +15,7 @@
             <div class "row">
                 <div class="col-md-4 offset-md-4">
                     <h2>Login</h2>
-                    <form asp-area="admin" asp-controller="login" asp-action="Logar" method="post">
+                    <form asp-area="admin" asp-controller="Login" asp-action="Logar" method="post">
                         <div style="color: red">@ViewBag.ErrorLogin</div>
                         <div class="mb-3">
                             <label>Login</label>

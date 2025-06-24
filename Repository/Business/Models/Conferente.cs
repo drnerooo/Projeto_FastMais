@@ -9,15 +9,9 @@ namespace Business.Models
     public class Conferente
     {
 
-        //criar commit sem os construtores
         public Conferente()
         {
 
-        }
-
-        public Conferente(string nome)
-        {
-            this.nome = nome;
         }
         public Conferente(string nome, string login, string senha)
         {

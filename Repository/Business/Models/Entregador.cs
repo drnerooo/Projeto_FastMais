@@ -12,10 +12,6 @@ namespace Business.Models
         {
 
         }
-        public Entregador(string nome)
-        {
-            this.nome = nome;
-        }
         public Entregador(string nome, string login, string senha)
         {
             this.nome = nome;

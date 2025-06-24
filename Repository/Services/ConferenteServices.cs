@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Identity.Client;
 using Repository.EF;
 using Repository.Repositories;
 
@@ -11,10 +13,15 @@ namespace Services
 {
     public class ConferenteServices : GenericServices<Conferente>
     {
-        public ConferenteServices(GenericRepository<Conferente> repository) : base(repository) { }
         private readonly Context _context;
+        public ConferenteServices(GenericRepository<Conferente> repository, Context context) : base(repository)
+        {
+            _context = context;
+        }
 
-
+        public ConferenteServices(GenericRepository<Conferente> repository) : base(repository)
+        {
+        }
         public Conferente Logar(string login, string senha)
          {
             Conferente conferenteRetorno = null;
@@ -43,7 +50,7 @@ namespace Services
             return conferenteRetorno;
         }
 
-        public void Cadastrar(Conferente conferente)
+        public void CadastrarConferente(Conferente conferente)
         {
             _context.Conferentes.Add(conferente);
             _context.SaveChanges();

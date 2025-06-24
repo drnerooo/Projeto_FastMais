@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cafe</title>
+    <link href="~/lib/bootstrap-5.3.5-dist/css/bootstrap.css" rel="stylesheet" />
+    </head>
+<body>
+    
+    <div class="container">
+        <div class="row topo rounded">
+            <div class="col-md-6 col-12" style="padding-left:20px; padding-top 20px"></div>
+            <h2>Administração</h2>
+        </div>
+        <div class="col-12 col-md-9">
+            <nav class ="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="container navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class ="nav-link" href="#">Conferente</a>
+                            <a class ="nav-link" href="#">Entrega</a>
+                            <a class ="nav-link" href="#">Entregador</a>
+                            <a class ="nav-link" href="#">Produto</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class ="row corpo rounded">
+        @RenderBody()
+    </div>
+    <div class="row">
+    </div>
+  
+    <script src="~/lib/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>"
+</body>
+</html>

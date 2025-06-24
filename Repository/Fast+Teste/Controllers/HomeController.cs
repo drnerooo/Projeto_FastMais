@@ -21,13 +21,10 @@ public class HomeController : Controller
     {
         _context = context;
         _logger = logger;
-        _conferenteServices = new ConferenteServices(new ConferenteRepository(context));
     }
 
     public IActionResult Index()
     {
-        List<Conferente> conferentes = _conferenteServices.GetAll().OrderBy(x=>x.id).ToList();
-        ViewBag.Conferentes = conferentes;
         return View();
     }
 

@@ -1,4 +1,5 @@
 ﻿using Business.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,17 @@ namespace Repository.EF
 {
     public class DBInitializer
     {
-        public static void Initialize(Context context){ 
+        public static void Initialize(Context context)
+        {
+            context.Database.Migrate();
             if (context.Database.EnsureCreated())
             {
 
                 context.Conferentes.Add(
-                    new Conferente("Conferente_Chefe", "admin", "admin"));
+                    new Conferente("Conferente_Chefe", "admin", "123"));
 
                 context.Entregadores.Add(
-                    new Entregador("Entregador_Chefe", "admin", "admin"));
+                    new Entregador("Entregador_Chefe", "admin", "123"));
                 context.Entregas.Add(
                     new Entrega("rua dos pinheiros azedos", 50, DateTime.Now, 1, 1));
 
@@ -29,8 +32,6 @@ namespace Repository.EF
                     context.Produtos.Add(caboflex15);
 
                 context.SaveChanges();
-
-
             }
         }
     }

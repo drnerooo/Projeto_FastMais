@@ -1,21 +1,20 @@
-﻿@page
-@model Business.Models.Entregador
+﻿@model Business.Models.Conferente
 @{
-    ViewData["Title"] = "Login Entregador";
+    ViewData["Title"] = "Logar de Entregador";
 }
 
-<h2>Logar Conta - Entregador</h2>
-<form>
- <h1>Insira seu Login</h1>
- <div class="form-group">
-   <input type="text" class="form-control" id="loginEnt" placeholder="Digite seu Login" required>
- </div>
-   <br />
- <div class="form-group">
-   <input type="password" class="form-control" id="senhaEnt" placeholder="Digite sua Senha" required>
- </div>
-   <br />
- <button type="submit" class="btn btn-primary">Entrar</button>
- <button type="reset" class="btn btn-primary">Limpar</button>
- <a href="criarloginentregador.html" class="btn btn-primary">Criar Login</a>
+<h2>Logar Entregador</h2>
+
+<form asp-action="Logar" method="post">
+     <h1>Insira seu Login</h1>
+     <div class="mb-3">
+        <label asp-for="login" class="form-label">Login</label>
+        <input asp-for="login" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="senha" class="form-label">Senha</label>
+        <input asp-for="senha" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Logar</button>
+     <a asp-controller="Entregador" asp-action="criar_login_entregador" class="btn btn-primary">Criar Login</a>
 </form>
