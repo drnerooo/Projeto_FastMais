@@ -15,10 +15,11 @@ namespace Fast_Teste.Controllers
         public EntregadorController(Context context)
         {
             _context = context;
-            _entregadorServices = new EntregadorServices(new EntregadorRepository(context));
-            _entregaservices = new EntregaServices(new GenericRepository<EntregaServices>(context), context);
+            _entregadorServices = new EntregadorServices(new EntregadorRepository(context), context);
+            _entregaservices = new EntregaServices(new GenericRepository<Entrega>(_context));
+
         }
-        public IActionResult Index()
+        public IActionResult IndexEntregador()
         {
             return View();
         }
@@ -40,7 +41,7 @@ namespace Fast_Teste.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Principal");
+                return RedirectToAction("IndexEntregador");
             }
         }
         [HttpGet]
@@ -54,9 +55,30 @@ namespace Fast_Teste.Controllers
             _entregadorServices.Cadastrar(entregador);
             return RedirectToAction("login_entregador");
         }
+        [HttpGet]
         public IActionResult Pendentes()
         {
             var entregas = _entregaservices.GetPendentes();
+            return View(entregas);
+        }
+        [HttpPost]
+        public IActionResult Aceitar(int id)
+        {
+            _entregaservices.AceitarEntrega(id);
+            return RedirectToAction("Pendentes");
+        }
+
+        [HttpPost]
+        public IActionResult Recusar(int id)
+        {
+            _entregaservices.RecusarEntrega(id);
+            return RedirectToAction("Pendentes");
+        }
+
+        [HttpGet]
+        public IActionResult Atuais()
+        {
+            var entregas = _entregaservices.GetAceitas();
             return View(entregas);
         }
     }

@@ -12,11 +12,12 @@ namespace Services
 {
     public class EntregadorServices : GenericServices<Entregador>
     {
-        public EntregadorServices(GenericRepository<Entregador> repository) : base(repository)
-        {
-
-        }
         private readonly Context _context;
+
+        public EntregadorServices(GenericRepository<Entregador> repository, Context context) : base(repository)
+        {
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+        }
         public Entregador Logar(string login, string senha)
         {
             Entregador entregadorRetorno = null;

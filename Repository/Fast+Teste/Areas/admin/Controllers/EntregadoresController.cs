@@ -20,7 +20,7 @@ namespace Fast_Teste.Areas.admin.Controllers
         public EntregadoresController(Context context)
         {
             _context = context;
-            _entregadorservices = new EntregadorServices(new GenericRepository<Entregador>(context));
+            _entregadorservices = new EntregadorServices(new GenericRepository<Entregador>(context), context);
         }
         // GET: EntregadorController
         public ActionResult Index()

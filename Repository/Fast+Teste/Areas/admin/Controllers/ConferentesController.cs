@@ -38,35 +38,6 @@ namespace Fast_Teste.Areas.admin.Controllers
             return View(conferente);
         }
 
-        // GET: ConferentesController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ConferentesController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Conferente conferente)
-        {
-            try
-            {
-                if (_conferenteServices.Insert(conferente))
-                {
-                    Validation<Conferente>.CopyValidation(ModelState, _conferenteServices);
-                    return RedirectToAction(nameof(Index));
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         // GET: ConferentesController/Edit/5
         public ActionResult Edit(int id)
         {

@@ -1,0 +1,36 @@
+﻿@model List<Business.Models.Entrega>
+
+<h2>Entregas Pendentes</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Endereço</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data de Início</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entrega in Model)
+        {
+        <tr>
+            <td>@entrega.endereco</td>
+            <td>@entrega.descricao</td>
+            <td>R$ @entrega.valor</td>
+            <td>@entrega.inicio.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>
+                <form asp-action="Aceitar" method="post" class="d-inline">
+                    <input type="hidden" name="id" value="@entrega.id" />
+                    <button type="submit" class="btn btn-success btn-sm">Aceitar</button>
+                </form>
+                <form asp-action="Recusar" method="post" class="d-inline">
+                    <input type="hidden" name="id" value="@entrega.id" />
+                    <button type="submit" class="btn btn-danger btn-sm">Recusar</button>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

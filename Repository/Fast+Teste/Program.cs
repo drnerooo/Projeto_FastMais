@@ -16,11 +16,27 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
 builder.Services.AddScoped<GenericRepository<Conferente>>();
-builder.Services.AddScoped<ConferenteServices>();
-builder.Services.AddScoped<EntregadorServices>();
+builder.Services.AddScoped<ConferenteServices>(provider =>
+{
+    var repo = provider.GetRequiredService<GenericRepository<Conferente>>();
+    var context = provider.GetRequiredService<Context>();
+    return new ConferenteServices(repo, context);
+});
+
+builder.Services.AddScoped<EntregadorServices>(provider =>
+{
+    var repo = provider.GetRequiredService<GenericRepository<Entregador>>();
+    var context = provider.GetRequiredService<Context>();
+    return new EntregadorServices(repo, context);
+});
 builder.Services.AddScoped<GenericRepository<Entregador>>();
 builder.Services.AddScoped<GenericRepository<Entrega>>();
-builder.Services.AddScoped<EntregaServices>();
+builder.Services.AddScoped<EntregaServices>(provider =>
+{
+    var repo = provider.GetRequiredService<GenericRepository<Entrega>>();
+    var context = provider.GetRequiredService<Context>();
+    return new EntregaServices(repo, context);
+});
 
 var app = builder.Build();
 

@@ -87,11 +87,10 @@ namespace Repository.EF
                            t.Property(t => t.Quantidade).HasColumnType("int").IsRequired();
                            t.Property(t => t.Id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                            t.HasKey(t => t.Id);
-                           t.HasOne(t => t.Produto)
-                               .WithMany()
-                               .HasForeignKey(t => t.ProdutoId)
-                               .OnDelete(DeleteBehavior.NoAction)
-                               .IsRequired();
+                    t.HasOne(t => t.Produto)
+                        .WithMany()
+                        .HasForeignKey(t => t.ProdutoID);
+                               
                            t.HasOne(t => t.Entrega)
                                .WithMany()
                                .HasForeignKey(t => t.EntregaId)

@@ -108,16 +108,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmVyZW50ZVxSZWxhdG9yaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Entregador/Atuais.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmVnYWRvclxBdHVhaXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Entregador/criar_login_entregador.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmVnYWRvclxjcmlhcl9sb2dpbl9lbnRyZWdhZG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Entregador/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmVnYWRvclxJbmRleC5jc2h0bWw=
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Entregador/IndexEntregador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmVnYWRvclxJbmRleEVudHJlZ2Fkb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Entregador/login_entregador.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmVnYWRvclxsb2dpbl9lbnRyZWdhZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Entregador/Pendentes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmVnYWRvclxQZW5kZW50ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Home/Index.cshtml]

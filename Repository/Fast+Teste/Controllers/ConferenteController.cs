@@ -18,7 +18,7 @@ namespace Fast_Teste.Controllers
         {
             _context = context;
             _conferenteServices = new ConferenteServices(new GenericRepository<Conferente>(context), context);
-            _entregaservices = new EntregaServices(new GenericRepository<EntregaServices>(context), context);
+            _entregaservices = new EntregaServices(new GenericRepository<Entrega>(_context));
         }
         public IActionResult Index()
         {
@@ -40,15 +40,27 @@ namespace Fast_Teste.Controllers
         {
             return View();
         }
-
-        public IActionResult Create(Entrega entrega)
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Conferente conferente)
         {
-            if (_entregaservices.Insert(entrega))
+            try
             {
-                return RedirectToAction("Index", "Home"); // ou outra tela
+                if (_conferenteServices.Insert(conferente))
+                {
+                    Validation<Conferente>.CopyValidation(ModelState, _conferenteServices);
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return View();
+                }
             }
-
-            return View(entrega);
+            catch
+            {
+                return View();
+            }
         }
         public IActionResult Relatorio()
         {

@@ -4,10 +4,6 @@
 
 <form asp-action="AdicionarProduto" method="post">
     <div class="mb-3">
-        <label asp-for="ProdutoId" class="form-label">Produto</label>
-        <select asp-for="ProdutoId" asp-items="ViewBag.Produtos" class="form-control"></select>
-    </div>
-    <div class="mb-3">
         <label asp-for="EntregaId" class="form-label">Entrega</label>
         <select asp-for="EntregaId" asp-items="ViewBag.Entregas" class="form-control"></select>
     </div>

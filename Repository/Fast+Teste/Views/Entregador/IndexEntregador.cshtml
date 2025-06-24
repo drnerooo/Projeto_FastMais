@@ -9,8 +9,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Pedidos Pendentes</h5>
-                <p class="card-text">Visualize os pedidos que ainda precisam ser conferidos.</p>
-                <a href="#" class="btn btn-primary">Ver Pedidos</a>
+                <p class="card-text">Visualize os pedidos que ainda precisam ser entregues.</p>
+                <a asp-controller="Entregador" asp-action="Pendentes" class="btn btn-success">Ver Entregas a Aceitar</a>
             </div>
         </div>
     </div>
@@ -19,8 +19,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Histórico</h5>
-                <p class="card-text">Acompanhe os pedidos já conferidos.</p>
-                <a href="#" class="btn btn-secondary">Ver Histórico</a>
+                <p class="card-text">Acompanhe os pedidos já aceitos.</p>
+                <a asp-controller="Entregador" asp-action="Aceitar" class="btn btn-success">Ver Entregas Aceitas</a>
             </div>
         </div>
     </div>
