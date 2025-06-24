@@ -49,7 +49,6 @@ namespace Repository.EF
                     t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
                     t.Property(t => t.nome).HasColumnType("varchar(128)").IsRequired();
                     t.Property(t => t.valor).HasColumnType("float").IsRequired();
-                    t.Property(t => t.teste).HasColumnType("float").IsRequired();
                 }
            );
             modelBuilder.Entity <Entrega>(
@@ -63,13 +62,14 @@ namespace Repository.EF
                     t.Property(t => t.descricao).HasColumnType("varchar(128)");
                     t.Property(t => t.inicio).HasColumnType("datetime").IsRequired();
                     t.Property(t => t.fim).HasColumnType("datetime");
+                    t.Property(t => t.Entregue).HasColumnType("bit").IsRequired();
                     t.HasOne(t => t.conferente)
                         .WithMany()
                         .HasForeignKey(t => t.conferenteID)
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                     t.HasOne(t => t.produtoentrega)
-                        .WithMany(t => t.entregas)
+                        .WithMany()
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                     t.HasOne(t => t.entregador)
@@ -82,18 +82,23 @@ namespace Repository.EF
             modelBuilder.Entity<ProdutoEntrega>(
                 t =>
                 {
-                    t.ToTable("ProdutoEntrega");
-                    t.Property(t => t.quantidade).HasColumnType("int").IsRequired();
-                    t.Property(t => t.id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
-                    t.HasKey(t => t.id);
-                    t.HasMany(t => t.produtos)
-                        .WithOne(t => t.produtoentrega)
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-                    t.HasMany(t => t.entregas)
-                        .WithOne(t => t.produtoentrega)
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+
+                           t.ToTable("ProdutoEntrega");
+                           t.Property(t => t.Quantidade).HasColumnType("int").IsRequired();
+                           t.Property(t => t.Id).HasColumnType("int").IsRequired().ValueGeneratedOnAdd();
+                           t.HasKey(t => t.Id);
+                           t.HasOne(t => t.Produto)
+                               .WithMany()
+                               .HasForeignKey(t => t.ProdutoId)
+                               .OnDelete(DeleteBehavior.NoAction)
+                               .IsRequired();
+                           t.HasOne(t => t.Entrega)
+                               .WithMany()
+                               .HasForeignKey(t => t.EntregaId)
+                               .OnDelete(DeleteBehavior.NoAction)
+                                 .IsRequired();
+                 
+    
 
 
                 }

@@ -1,0 +1,24 @@
+﻿@model Business.Models.ProdutoEntrega
+
+<h2>Adicionar Produto à Entrega</h2>
+
+<form asp-action="AdicionarProduto" method="post">
+    <div class="mb-3">
+        <label asp-for="ProdutoId" class="form-label">Produto</label>
+        <select asp-for="ProdutoId" asp-items="ViewBag.Produtos" class="form-control"></select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EntregaId" class="form-label">Entrega</label>
+        <select asp-for="EntregaId" asp-items="ViewBag.Entregas" class="form-control"></select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Quantidade" class="form-label">Quantidade</label>
+        <input asp-for="Quantidade" type="number" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Adicionar</button>
+    <a asp-controller="Conferente" asp-action="CriarProduto" class="btn btn-secondary">Criar Produto</a>
+</form>
+<div class="mt-3">
+    <a asp-controller="Conferente" asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </div>

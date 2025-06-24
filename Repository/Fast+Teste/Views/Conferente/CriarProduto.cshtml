@@ -1,0 +1,15 @@
+﻿@model Business.Models.Produto
+
+<h2>Cadastrar Produto</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="nome" class="form-label">Nome do Produto</label>
+        <input asp-for="nome" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="valor" class="form-label">Valor</label>
+        <input asp-for="valor" type="number" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Produto</button>
+</form>

@@ -19,7 +19,7 @@ namespace Services
         {
             return _repository.GetById(id);
         }
-        public bool Insert(TEntity entity)
+        public virtual bool Insert(TEntity entity)
         {
             bool resp = false;
             if (entity != null)

@@ -18,16 +18,12 @@ namespace Services
         {
             _context = context;
         }
-
-        public ConferenteServices(GenericRepository<Conferente> repository) : base(repository)
-        {
-        }
         public Conferente Logar(string login, string senha)
-         {
+        {
             Conferente conferenteRetorno = null;
             bool valid = true;
 
-            if (login==null || login.Equals(""))
+            if (login == null || login.Equals(""))
             {
                 ValidationDictionary.AddError("login", "Campo LOGIN Vazio.");
                 valid = false;
@@ -39,8 +35,8 @@ namespace Services
             }
             if (valid)
             {
-                 conferenteRetorno = Repository.GetAll().Where
-                    (x => x.login == login && x.senha == senha).FirstOrDefault();
+                conferenteRetorno = Repository.GetAll().Where
+                   (x => x.login == login && x.senha == senha).FirstOrDefault();
 
                 if (conferenteRetorno == null)
                 {
@@ -55,5 +51,37 @@ namespace Services
             _context.Conferentes.Add(conferente);
             _context.SaveChanges();
         }
+        public override bool Insert(Conferente entity)
+        {
+            bool retorno = true;
+
+            if (entity.nome == null || entity.nome.Equals(""))
+            {
+                ValidationDictionary.AddError("Nome", "Campo NOME Vazio.");
+                retorno = false;
+            }
+            else if (entity.login == null)
+            {
+                ValidationDictionary.AddError("Login", "Campo LOGIN Vazio.");
+                retorno = false;
+            }
+            else if (entity.senha == null)
+            {
+                ValidationDictionary.AddError("Senha", "Campo SENHA Vazio.");
+                retorno = false;
+            }
+            if (retorno)
+            {
+                retorno = base.Insert(entity);
+            }
+            return retorno;
+        }
+
+            public void DeleteConfirmed(Conferente conferente)
+            {
+                Repository.Delete(conferente);
+            }
+       
+        
     }
 }

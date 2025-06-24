@@ -46,5 +46,35 @@ namespace Services
             _context.Entregadores.Add(entregador);
             _context.SaveChanges();
         }
+        public override bool Insert(Entregador entity)
+        {
+            bool retorno = true;
+
+            if (entity.nome == null || entity.nome.Equals(""))
+            {
+                ValidationDictionary.AddError("Nome", "Campo NOME Vazio.");
+                retorno = false;
+            }
+            else if (entity.login == null)
+            {
+                ValidationDictionary.AddError("Login", "Campo LOGIN Vazio.");
+                retorno = false;
+            }
+            else if (entity.senha == null)
+            {
+                ValidationDictionary.AddError("Senha", "Campo SENHA Vazio.");
+                retorno = false;
+            }
+            if (retorno)
+            {
+                retorno = base.Insert(entity);
+            }
+            return retorno;
+        }
+
+        public void DeleteConfirmed(Entregador entregador)
+        {
+            Repository.Delete(entregador);
+        }
     }
 }

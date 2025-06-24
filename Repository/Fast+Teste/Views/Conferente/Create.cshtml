@@ -1,0 +1,34 @@
+﻿@model Business.Models.Entrega
+
+<h2>Cadastrar Nova Entrega</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="endereco" class="form-label">Endereço</label>
+        <input asp-for="endereco" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="valor" class="form-label">Valor (R$)</label>
+        <input asp-for="valor" type="number" step="0.01" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="descricao" class="form-label">Descrição</label>
+        <textarea asp-for="descricao" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="inicio" class="form-label">Data de Início</label>
+        <input asp-for="inicio" type="datetime-local" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="conferenteID" class="form-label">ID do Conferente</label>
+        <input asp-for="conferenteID" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="entregadorID" class="form-label">ID do Entregador</label>
+        <input asp-for="entregadorID" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Entrega</button>
+
+    <a asp-controller="Conferente" asp-action="AdicionarProduto" class="btn btn-secondary">Adicionar Produto</a>
+</form>

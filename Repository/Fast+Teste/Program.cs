@@ -1,5 +1,6 @@
 using Business.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Repository.EF;
 using Repository.Repositories;
 using Services;
@@ -8,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Referencia para EntityFramework SQL Server
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<Context>(options => options.UseSqlServer(connectionString, b => b.MigrationsAssembly("Fast+")));
+builder.Services.AddDbContext<Context>(options => options.UseSqlServer(connectionString));
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
@@ -17,6 +19,8 @@ builder.Services.AddScoped<GenericRepository<Conferente>>();
 builder.Services.AddScoped<ConferenteServices>();
 builder.Services.AddScoped<EntregadorServices>();
 builder.Services.AddScoped<GenericRepository<Entregador>>();
+builder.Services.AddScoped<GenericRepository<Entrega>>();
+builder.Services.AddScoped<EntregaServices>();
 
 var app = builder.Build();
 
@@ -50,18 +54,17 @@ app.MapControllerRoute(
 
 
 
-using (var scope = app.Services.CreateScope())
+var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+try
 {
-    var services = scope.ServiceProvider;
-    try
-    {
         var context = services.GetRequiredService<Context>();
         DBInitializer.Initialize(context);
-    }
-    catch (Exception ex)
-    {
+}
+catch (Exception ex)
+{
         var logger = services.GetRequiredService<ILogger<Program>>();
         logger.LogError(ex, "An error occurred while initializing the database.");
-    }
 }
+
 app.Run();

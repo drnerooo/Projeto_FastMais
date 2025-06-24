@@ -32,8 +32,40 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ29uZmVyZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Conferentes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ29uZmVyZW50ZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Conferentes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ29uZmVyZW50ZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Conferentes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ29uZmVyZW50ZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Conferentes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcQ29uZmVyZW50ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Entregadores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRW50cmVnYWRvcmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Entregadores/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRW50cmVnYWRvcmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Entregadores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRW50cmVnYWRvcmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Entregadores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRW50cmVnYWRvcmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Entregadores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcRW50cmVnYWRvcmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Areas/admin/Views/Login/Index.cshtml]
@@ -48,6 +80,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcYWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Conferente/AdicionarProduto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmVyZW50ZVxBZGljaW9uYXJQcm9kdXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Conferente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmVyZW50ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Conferente/CriarProduto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmVyZW50ZVxDcmlhclByb2R1dG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Conferente/criar_login_conferente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmVyZW50ZVxjcmlhcl9sb2dpbl9jb25mZXJlbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +102,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Conferente/login_conferente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmVyZW50ZVxsb2dpbl9jb25mZXJlbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Conferente/Relatorio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmVyZW50ZVxSZWxhdG9yaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jgfra/OneDrive/Documentos/GitHub/Projeto_Facul/Repository/Fast+Teste/Views/Entregador/criar_login_entregador.cshtml]

@@ -12,11 +12,13 @@ namespace Fast_Teste.Controllers
     {
         private Context _context;
         private ConferenteServices _conferenteServices;
+        private EntregaServices _entregaservices;
 
         public ConferenteController(Context context)
         {
             _context = context;
-            _conferenteServices = new ConferenteServices(new GenericRepository<Conferente>(context));
+            _conferenteServices = new ConferenteServices(new GenericRepository<Conferente>(context), context);
+            _entregaservices = new EntregaServices(new GenericRepository<EntregaServices>(context), context);
         }
         public IActionResult Index()
         {
@@ -30,6 +32,33 @@ namespace Fast_Teste.Controllers
         }
 
         public IActionResult criar_login_conferente()
+        {
+            return View();
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Create(Entrega entrega)
+        {
+            if (_entregaservices.Insert(entrega))
+            {
+                return RedirectToAction("Index", "Home"); // ou outra tela
+            }
+
+            return View(entrega);
+        }
+        public IActionResult Relatorio()
+        {
+            return View();
+        }
+        public IActionResult AdicionarProduto()
+        {
+            return View();
+        }
+        public IActionResult CriarProduto()
         {
             return View();
         }

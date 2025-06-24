@@ -53,7 +53,8 @@ namespace Fast_Teste.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    b.Property<bool>("Entregue")
+                        .HasColumnType("bit");
 
                     b.Property<int>("conferenteID")
                         .HasColumnType("int");
@@ -74,9 +75,6 @@ namespace Fast_Teste.Migrations
                     b.Property<DateTime>("inicio")
                         .HasColumnType("datetime");
 
-                    b.Property<int>("produtoentregaid")
-                        .HasColumnType("int");
-
                     b.Property<double>("valor")
                         .HasColumnType("float");
 
@@ -85,8 +83,6 @@ namespace Fast_Teste.Migrations
                     b.HasIndex("conferenteID");
 
                     b.HasIndex("entregadorID");
-
-                    b.HasIndex("produtoentregaid");
 
                     b.ToTable("Entrega", (string)null);
                 });
@@ -128,34 +124,43 @@ namespace Fast_Teste.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(128)");
 
-                    b.Property<int>("produtoentregaid")
-                        .HasColumnType("int");
-
-                    b.Property<double>("teste")
-                        .HasColumnType("float");
-
                     b.Property<double>("valor")
                         .HasColumnType("float");
 
                     b.HasKey("id");
-
-                    b.HasIndex("produtoentregaid");
 
                     b.ToTable("Produto", (string)null);
                 });
 
             modelBuilder.Entity("Business.Models.ProdutoEntrega", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("quantidade")
+                    b.Property<int>("EntregaId")
                         .HasColumnType("int");
 
-                    b.HasKey("id");
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Produtoid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntregaId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.HasIndex("Produtoid")
+                        .IsUnique()
+                        .HasFilter("[Produtoid] IS NOT NULL");
 
                     b.ToTable("ProdutoEntrega", (string)null);
                 });
@@ -175,8 +180,8 @@ namespace Fast_Teste.Migrations
                         .IsRequired();
 
                     b.HasOne("Business.Models.ProdutoEntrega", "produtoentrega")
-                        .WithMany("entregas")
-                        .HasForeignKey("produtoentregaid")
+                        .WithMany()
+                        .HasForeignKey("id")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -187,22 +192,33 @@ namespace Fast_Teste.Migrations
                     b.Navigation("produtoentrega");
                 });
 
-            modelBuilder.Entity("Business.Models.Produto", b =>
+            modelBuilder.Entity("Business.Models.ProdutoEntrega", b =>
                 {
-                    b.HasOne("Business.Models.ProdutoEntrega", "produtoentrega")
-                        .WithMany("produtos")
-                        .HasForeignKey("produtoentregaid")
+                    b.HasOne("Business.Models.Entrega", "Entrega")
+                        .WithMany()
+                        .HasForeignKey("EntregaId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("produtoentrega");
+                    b.HasOne("Business.Models.Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Business.Models.Produto", null)
+                        .WithOne("produtoentrega")
+                        .HasForeignKey("Business.Models.ProdutoEntrega", "Produtoid");
+
+                    b.Navigation("Entrega");
+
+                    b.Navigation("Produto");
                 });
 
-            modelBuilder.Entity("Business.Models.ProdutoEntrega", b =>
+            modelBuilder.Entity("Business.Models.Produto", b =>
                 {
-                    b.Navigation("entregas");
-
-                    b.Navigation("produtos");
+                    b.Navigation("produtoentrega")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

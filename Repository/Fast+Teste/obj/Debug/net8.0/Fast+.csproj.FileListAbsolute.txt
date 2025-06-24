@@ -586,5 +586,5 @@ C:\Users\jgfra\OneDrive\Documentos\GitHub\Projeto_Facul\Repository\Fast+Teste\ob
 C:\Users\jgfra\OneDrive\Documentos\GitHub\Projeto_Facul\Repository\Fast+Teste\obj\Debug\net8.0\Fast+.pdb
 C:\Users\jgfra\OneDrive\Documentos\GitHub\Projeto_Facul\Repository\Fast+Teste\obj\Debug\net8.0\Fast+.genruntimeconfig.cache
 C:\Users\jgfra\OneDrive\Documentos\GitHub\Projeto_Facul\Repository\Fast+Teste\obj\Debug\net8.0\ref\Fast+.dll
-C:\Users\jgfra\OneDrive\Documentos\GitHub\Projeto_Facul\Repository\Fast+Teste\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\jgfra\OneDrive\Documentos\GitHub\Projeto_Facul\Repository\Fast+Teste\obj\Debug\net8.0\scopedcss\Areas\admin\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\jgfra\OneDrive\Documentos\GitHub\Projeto_Facul\Repository\Fast+Teste\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

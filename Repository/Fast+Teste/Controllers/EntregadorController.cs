@@ -11,11 +11,12 @@ namespace Fast_Teste.Controllers
     {
         private EntregadorServices _entregadorServices;
         private Context _context;
-
+        private EntregaServices _entregaservices;
         public EntregadorController(Context context)
         {
             _context = context;
             _entregadorServices = new EntregadorServices(new EntregadorRepository(context));
+            _entregaservices = new EntregaServices(new GenericRepository<EntregaServices>(context), context);
         }
         public IActionResult Index()
         {
@@ -52,6 +53,11 @@ namespace Fast_Teste.Controllers
         {
             _entregadorServices.Cadastrar(entregador);
             return RedirectToAction("login_entregador");
+        }
+        public IActionResult Pendentes()
+        {
+            var entregas = _entregaservices.GetPendentes();
+            return View(entregas);
         }
     }
 }

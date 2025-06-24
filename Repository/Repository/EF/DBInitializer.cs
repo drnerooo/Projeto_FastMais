@@ -12,7 +12,6 @@ namespace Repository.EF
     {
         public static void Initialize(Context context)
         {
-            context.Database.Migrate();
             if (context.Database.EnsureCreated())
             {
 
